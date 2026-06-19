@@ -381,4 +381,4 @@ async def stop_bot(interaction: discord.Interaction):
     await bot.close()
 
 # === RUN BOT ===
-bot.run('MTQ1NTYzMTAzOTE3ODIxMTQ2MQ.GkBybv.IyEfxom9Fx-6-tqeZYi8csHU7_sNG9dcj9CDvw')
+bot.run('Your Token')
