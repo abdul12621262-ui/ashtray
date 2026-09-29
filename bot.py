@@ -14,7 +14,7 @@ intents.emojis_and_stickers = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 tree = bot.tree
 
-OWNER_ID = 1403820926381985973
+OWNER_ID = your id
 
 def is_owner():
     async def predicate(interaction: discord.Interaction):
